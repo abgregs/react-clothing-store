@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
+import { UserContext } from '../../contexts/user.context';
 
 import {
   signInAuthUserWithEmailAndPassword,
@@ -18,6 +19,8 @@ const defaultFormFields = {
 const LoginForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+
+  const { setCurrentUser } = useContext(UserContext);
 
   const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
@@ -42,16 +45,20 @@ const LoginForm = () => {
     event.preventDefault();
 
     try {
-      await signInAuthUserWithEmailAndPassword(email, password);
+      const { user } = await signInAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+      setCurrentUser(user);
       clearFormFields();
     } catch (error) {
-      switch(error.code) {
+      switch (error.code) {
         case 'auth/wrong-password':
           alert('incorrect password for email');
-          break
+          break;
         case 'auth/user-not-found':
           alert('no user associated with this email');
-          break
+          break;
         default:
           console.log('user login encountered an error', error);
       }
