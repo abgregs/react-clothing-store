@@ -29,11 +29,11 @@ const Navigation = () => {
               Sign Out
             </span>
           ) : (
-            <NavLink className='nav-link' to='/auth'>
+            <NavLink className='nav-link' to='auth'>
               Sign In
             </NavLink>
           )}
-          <NavLink className='nav-link' to='/shop'>
+          <NavLink className='nav-link' to='shop'>
             Shop
           </NavLink>
           <CartIcon />
