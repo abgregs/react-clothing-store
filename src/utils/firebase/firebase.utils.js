@@ -67,8 +67,8 @@ export const getCategoriesAndDocuments = async () => {
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map(docSnapshot => docSnapshot.data());
-}
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+};
 
 export const createUserDocumentFromAuth = async (
   userAuth,
@@ -80,7 +80,7 @@ export const createUserDocumentFromAuth = async (
 
   const userSnapshot = await getDoc(userDocRef);
 
-  // if the doc doesn't exist, create the doc
+  // if the doc/snapshot doesn't exist, create the doc
   if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -92,14 +92,10 @@ export const createUserDocumentFromAuth = async (
         createdAt,
         ...additionalInformation,
       });
-    } catch (error) {
-      console.log('Error creating the users', error);
-    }
-
-    // else just get the doc
-  } else {
-    return userDocRef;
+    } catch (error) {}
   }
+
+  return userSnapshot;
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
@@ -118,4 +114,17 @@ export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangedListener = (callback) => {
   onAuthStateChanged(auth, callback);
+};
+
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubscribe();
+        resolve(userAuth);
+      },
+      reject
+    );
+  });
 };
