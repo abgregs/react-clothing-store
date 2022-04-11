@@ -8,7 +8,7 @@ import Spinner from '../../components/spinner/spinner.component';
 import {
   selectCategoriesMap,
   selectCategoriesIsLoading,
-} from '../../store/categories/category.select';
+} from '../../store/categories/category.selector';
 
 import './category.styles.scss';
 
