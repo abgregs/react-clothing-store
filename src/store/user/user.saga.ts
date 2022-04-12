@@ -14,7 +14,7 @@ import {
   SignUpSuccess,
 } from './user.action';
 
-import { User } from 'firebase/auth';
+import { User, AuthError, AuthErrorCodes } from 'firebase/auth';
 
 import {
   getCurrentUser,
@@ -25,6 +25,20 @@ import {
   signOutUser,
   AdditionalInformation,
 } from '../../utils/firebase/firebase.utils';
+
+const handleSignInFailed = (error: AuthError) => {
+  const errorCode = error.code;
+  switch (errorCode) {
+    case AuthErrorCodes.INVALID_PASSWORD:
+      alert('incorrect password for email');
+      break;
+    case AuthErrorCodes.USER_DELETED:
+      alert('no user associated with this email');
+      break;
+    default:
+      console.log('user login encountered an error', error);
+  }
+}
 
 export function* getSnapshotFromUserAuth(
   userAuth: User,
@@ -44,6 +58,8 @@ export function* getSnapshotFromUserAuth(
     }
   } catch (error) {
     yield* put(signInFailed(error as Error));
+    handleSignInFailed(error as AuthError);
+
   }
 }
 
@@ -53,6 +69,7 @@ export function* signInWithGoogle() {
     yield* call(getSnapshotFromUserAuth, user);
   } catch (error) {
     yield* put(signInFailed(error as Error));
+    handleSignInFailed(error as AuthError);
   }
 }
 
@@ -71,6 +88,7 @@ export function* signInWithEmail({
     }
   } catch (error) {
     yield* put(signInFailed(error as Error));
+    handleSignInFailed(error as AuthError);
   }
 }
 
@@ -82,6 +100,7 @@ export function* isUserAuthenticated() {
     yield* call(getSnapshotFromUserAuth, userAuth);
   } catch (error) {
     yield* put(signInFailed(error as Error));
+    handleSignInFailed(error as AuthError);
   }
 }
 

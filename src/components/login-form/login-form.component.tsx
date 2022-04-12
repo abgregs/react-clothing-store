@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { useDispatch } from 'react-redux';
 
 import FormInput from '../form-input/form-input.component';
@@ -29,7 +29,7 @@ const LoginForm = () => {
     setFormFields(defaultFormFields);
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormFields(() => {
       return {
@@ -39,23 +39,13 @@ const LoginForm = () => {
     });
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    try {
+     try {
       dispatch(emailSignInStart(email, password));
       clearFormFields();
     } catch (error) {
-      switch (error.code) {
-        case 'auth/wrong-password':
-          alert('incorrect password for email');
-          break;
-        case 'auth/user-not-found':
-          alert('no user associated with this email');
-          break;
-        default:
-          console.log('user login encountered an error', error);
-      }
+      console.log('user sign in failed', error);
     }
   };
 
@@ -88,7 +78,11 @@ const LoginForm = () => {
           <Button buttonType='default' type='submit'>
             Sign In
           </Button>
-          <Button type='button' buttonType='google' onClick={signInWithGoogle}>
+          <Button
+            type='button'
+            buttonType='google-sign-in'
+            onClick={signInWithGoogle}
+          >
             Google Sign In
           </Button>
         </div>

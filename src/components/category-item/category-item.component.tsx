@@ -1,8 +1,16 @@
+import { FC } from 'react';
+
 import { useNavigate } from 'react-router-dom';
+
+import { CategoryData } from '../category-list/category-list';
 
 import './category-item.styles.scss';
 
-const CategoryItem = ({ category }) => {
+type CategoryItemProps = {
+  category: CategoryData;
+}
+
+const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
   const { imageUrl, title, route } = category;
   const navigate = useNavigate();
 
