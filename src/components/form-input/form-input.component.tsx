@@ -15,7 +15,7 @@ export type FormInputProps = {
   inputOptions?: InputOptions;
 }
 
-const formInput: FC<FormInputProps> = ({
+const FormInput: FC<FormInputProps> = ({
   label,
   inputOptions
 }) => {
@@ -39,4 +39,4 @@ const formInput: FC<FormInputProps> = ({
   );
 };
 
-export default formInput;
+export default FormInput;

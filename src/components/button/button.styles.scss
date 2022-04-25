@@ -1,47 +1,23 @@
 .button-container {
-  min-width: 165px;
-  width: auto;
-  height: 50px;
-  letter-spacing: 0.5px;
-  line-height: 50px;
-  padding: 0 35px 0 35px;
-  font-size: 15px;
-  background-color: black;
-  color: white;
-  text-transform: uppercase;
-  font-family: 'Open Sans Condensed';
-  font-weight: bolder;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @apply font-inter-light text-gray-800 py-2 px-4 border border-gray-800 rounded-sm uppercase;
 
   &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    @apply bg-gray-800 border-gray-800 text-white;
   }
 
   &.google-sign-in {
-    background-color: #4285f4;
-    color: white;
+    @apply bg-indigo-600 text-white border-indigo-600;
 
     &:hover {
-      background-color: #357ae8;
-      border: none;
+      @apply bg-indigo-700;
     }
   }
 
   &.inverted {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    @apply bg-white;
 
     &:hover {
-      background-color: black;
-      color: white;
-      border: none;
+      @apply bg-gray-800 border-gray-800 text-white;
     }
   }
 }

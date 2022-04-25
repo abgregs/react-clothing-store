@@ -1,10 +1,8 @@
 .sign-up-container {
-  display: flex;
-  flex-direction: column;
-  width: 380px;
+  @apply flex flex-col w-full;
 }
 
 h2 {
-  margin: 10px 0;
+  @apply mb-4 text-xl font-inter-bold;
 }
 

@@ -30,7 +30,7 @@ const Navigation = () => {
  
   return (
     <div className='container'>
-      <nav className='max-w-7xl mx-auto px-2'>
+      <nav className='mx-auto px-2'>
         <div className='relative flex items-center justify-between h-16'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
             {/* Mobile menu button*/}
@@ -143,8 +143,10 @@ const Navigation = () => {
           </div>
         </nav>
       )}
+      <div className='content-container my-8'>
+        <Outlet />
+      </div>
 
-      <Outlet />
     </div>
   );
 };
