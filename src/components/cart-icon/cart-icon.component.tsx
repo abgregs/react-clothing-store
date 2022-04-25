@@ -7,7 +7,7 @@ import {
 
 import { setIsCartOpen } from '../../store/cart/cart.action';
 
-import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';
+import { BsHandbag } from 'react-icons/bs';
 import './cart-icon.styles.scss';
 
 const CartIcon = () => {
@@ -18,8 +18,8 @@ const CartIcon = () => {
   const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
 
   return (
-    <div className='cart-icon-container' onClick={toggleIsCartOpen}>
-      <ShoppingIcon className='cart-icon' />
+    <div className='relative flex justify-center items-center cursor-pointer' onClick={toggleIsCartOpen}>
+      <BsHandbag className='h-8 w-8' aria-hidden="true"/>
       <span className='item-count'>{cartCount}</span>
     </div>
   );
