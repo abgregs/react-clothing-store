@@ -2,22 +2,21 @@
 
 This is an eCommerce store built with React using Redux and Hooks as well as Firebase for user authentication and Stripe for payments.
 
-The project involved building a full eCommerce app to gain a solid understanding of important React concepts like those listed below.
+The project involved building a production-ready eCommerce app using important React concepts and design patterns like those listed below.
 
 * React Hooks such as `useState`, `useEffect`, `useContext` and `useReducer`
 * Dispatching actions and extracting data from the Redux store state
-* Redux Saga for managing Redux side effects
-* Redux Thunk middleware
+* Redux Thunk and Redux Saga middleware for managing Redux side effects and async actions
 * Composing utilities that extend Firebase methods for user auth and database operations
 * Approaches to styling components with SASS, CSS in JS, and Tailwind CSS
 * Observer model and subscription mechanisms for sequences of async events
-* Advanced TypeScript including typing Firebase and Redux Saga
+* Advanced TypeScript including typing out Firebase and Redux Saga
 * Serverless functions
 * Deploying with Netlify
 
 ## View the Project
 
-You can view a [live version of the project here](https://precious-bublanina-2e2154.netlify.app/).
+You can view a [live version of the project here](https://abgregs-react-clothing-store.netlify.app/).
 
 ## Create React App
 
