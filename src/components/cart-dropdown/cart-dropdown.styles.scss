@@ -1,29 +1,16 @@
 .cart-dropdown-container {
-  position: absolute;
+  @apply absolute flex flex-col p-4 border border-gray-800 bg-white right-12 top-24 z-10;
   width: 240px;
   height: 340px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border: 1px solid black;
-  background-color: white;
-  top: 90px;
-  right: 40px;
-  z-index: 5;
 
   .empty-message {
-    font-size: 18px;
-    margin: 50px auto;
+    @apply text-lg my-12 mx-auto;
   }
 
   .cart-items {
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
-  }
-
-  button {
-    margin-top: auto;
+    overflow-y: scroll;
   }
 }
