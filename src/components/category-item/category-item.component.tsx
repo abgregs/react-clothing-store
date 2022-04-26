@@ -2,13 +2,13 @@ import { FC } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import { CategoryData } from '../category-list/category-list';
+import { CategoryData } from '../category-list/category-list.component.';
 
 import './category-item.styles.scss';
 
 type CategoryItemProps = {
   category: CategoryData;
-}
+};
 
 const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
   const { imageUrl, title, route } = category;
@@ -21,9 +21,9 @@ const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
         className='background-image'
         style={{ backgroundImage: `url(${imageUrl})` }}
       />
+      <div className='overlay' />
       <div className='category-body-container'>
         <h2>{title}</h2>
-        <p>Shop Now</p>
       </div>
     </div>
   );

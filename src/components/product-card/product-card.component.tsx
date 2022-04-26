@@ -6,7 +6,8 @@ import { addItemToCart } from '../../store/cart/cart.action';
 
 import { CategoryItem } from '../../store/categories/category.types';
 
-import Button from '../button/button.component';
+import { BsBagPlus } from 'react-icons/bs';
+
 import './product-card.styles.scss';
 
 type ProductCardProps = {
@@ -24,15 +25,17 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
     dispatch(addItemToCart(cartItems, product));
   };
   return (
-    <div className='product-card-container'>
+    <div className='product-card-container' onClick={AddProductToCart}>
       <img src={imageUrl} alt={`${name}`} />
       <div className='footer'>
-        <span className='name'>{name}</span>
-        <span className='price'>{price}</span>
+        <div className='product-details-container'>
+          <h3 className='name'>{name}</h3>
+          <div className='price'>${price.toFixed(2)}</div>
+        </div>
+        <div className='add-to-bag-container'>
+          <BsBagPlus className='add-to-bag-icon h-5 w-5' />
+        </div>
       </div>
-      <Button buttonType='inverted' onClick={AddProductToCart}>
-        Add to cart
-      </Button>
     </div>
   );
 };

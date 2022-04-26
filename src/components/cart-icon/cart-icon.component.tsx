@@ -7,7 +7,7 @@ import {
 
 import { setIsCartOpen } from '../../store/cart/cart.action';
 
-import { BsHandbag } from 'react-icons/bs';
+import { BsBag } from 'react-icons/bs';
 import './cart-icon.styles.scss';
 
 const CartIcon = () => {
@@ -19,7 +19,7 @@ const CartIcon = () => {
 
   return (
     <div className='relative flex justify-center items-center cursor-pointer' onClick={toggleIsCartOpen}>
-      <BsHandbag className='h-8 w-8' aria-hidden="true"/>
+      <BsBag className='h-8 w-8' aria-hidden="true"/>
       <span className='item-count'>{cartCount}</span>
     </div>
   );

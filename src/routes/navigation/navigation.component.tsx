@@ -30,7 +30,7 @@ const Navigation = () => {
  
   return (
     <div className='container'>
-      <nav className='mx-auto px-2'>
+      <nav className='mx-auto'>
         <div className='relative flex items-center justify-between h-16'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
             {/* Mobile menu button*/}

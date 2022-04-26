@@ -17,7 +17,11 @@ module.exports = {
       'inter-bold': ['Inter-Bold', 'sans-serif'],
       'inter-light': ['Inter-Light', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      minWidth: {
+        '3/10': '30%',
+      }
+    },
   },
   plugins: [],
 }

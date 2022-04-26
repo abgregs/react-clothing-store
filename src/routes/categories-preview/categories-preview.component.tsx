@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 
-import CategoryPreview from '../../components/category-preview/category-preview';
+import CategoryPreview from '../../components/category-preview/category-preview.component';
 import Spinner from '../../components/spinner/spinner.component';
 
 import {
@@ -18,7 +18,7 @@ const CategoriesPreview = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className='categories-container'>
+        <div className='category-previews-container'>
           {Object.keys(categoriesMap).map((title) => {
             const products = categoriesMap[title];
             return (

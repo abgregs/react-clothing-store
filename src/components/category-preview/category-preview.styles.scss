@@ -1,17 +1,11 @@
 .category-preview-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
+  @apply flex w-full flex-col mb-8;
 
   .title {
-    font-size: 28px;
-    margin-bottom: 25px;
-    cursor: pointer;
+    @apply text-3xl mb-8 cursor-pointer capitalize;
   }
 
   .preview {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
+    @apply w-full grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4;
   }
 }

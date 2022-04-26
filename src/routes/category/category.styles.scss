@@ -1,12 +1,7 @@
 .category-container {
-  display: grid; 
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 20px;
-  row-gap: 50px;
+  @apply w-full grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4;
 }
 
 .category-title {
-  font-size: 28px;
-  margin-bottom: 25px;
-  text-align: center;
+  @apply text-center text-3xl capitalize mb-8;
 }
