@@ -23,11 +23,7 @@
 }
 
 .button-spinner-overlay {
-  height: 60vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @apply w-full flex justify-center items-center px-6;
 }
 
 .button-spinner-container {

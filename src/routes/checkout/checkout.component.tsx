@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 
 import {
@@ -16,7 +17,7 @@ const Checkout = () => {
 
   return (
     <div className='checkout-container'>
-      <h1>Checkout</h1>
+      <h1 className='checkout-title'>Checkout</h1>
       <div className='checkout-header'>
         <div className='header-block'>
           <span>Product</span>
@@ -34,11 +35,11 @@ const Checkout = () => {
           <span>Remove</span>
         </div>
       </div>
-      <div>
+      <Fragment>
         {cartItems.map((cartItem) => (
           <CheckoutItem key={cartItem.id} cartItem={cartItem} />
         ))}
-      </div>
+      </Fragment>
       <div className='total'>Total: ${cartTotal}</div>
       <PaymentForm />
     </div>

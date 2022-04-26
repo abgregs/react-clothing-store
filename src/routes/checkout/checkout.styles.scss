@@ -1,20 +1,16 @@
 .checkout-container {
-  width: 55%;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 50px auto 0;
+  @apply w-full sm:w-4/5 flex flex-col items-center my-8 mx-auto mb-auto;
+
+  .checkout-title {
+    @apply text-3xl font-inter-bold;
+  }
 
   .checkout-header {
-    width: 100%;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid darkgrey;
+    @apply w-full text-base flex py-4 border-b border-gray-400;
 
     .header-block {
-      text-transform: capitalize;
+      @apply hidden md:block md:text-sm lg:text-base capitalize;
+
       width: 23%;
 
       &:last-child {
@@ -24,8 +20,6 @@
   }
 
   .total {
-    margin-top: 30px;
-    margin-left: auto;
-    font-size: 36px;
+    @apply mt-12 ml-auto text-3xl;
   }
 }

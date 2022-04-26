@@ -1,12 +1,21 @@
 .payment-form-container {
-  height: 300p;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @apply flex flex-col justify-center items-center my-8;
+
+  h2 {
+    @apply text-2xl mb-4;
+  }
+
+  .test-note {
+    @apply italic text-sm mb-4;
+  }
+
+  .StripeElement {
+    @apply mb-4;
+  }
 }
 
 .form-container {
-  height: 100px;
-  min-width: 500px;
+  @apply w-full sm:w-4/5;
+  height: 150px;
+  min-width: 280px;
 }

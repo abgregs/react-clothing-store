@@ -56,10 +56,14 @@ const PaymentForm = () => {
     setIsProcessingPayment(false);
 
     if (paymentResult.error) {
-      alert(paymentResult.error);
+      let errorMessage: String = 'There was an error submitting payment.';
+      if (paymentResult.error.message) {
+        errorMessage += ' ' + paymentResult.error.message;
+      }
+      alert(errorMessage);
     } else {
       if (paymentResult.paymentIntent.status === 'succeeded') {
-        alert('payment successful');
+        alert('Payment successful.');
       }
     }
   };
@@ -68,6 +72,7 @@ const PaymentForm = () => {
     <div className='payment-form-container'>
       <form className='form-container' onSubmit={paymentHandler}>
         <h2>Credit Card Payment</h2>
+        <div className='test-note'>Use test card number <code>4242 4242 4242 4242</code>, any future date, and any CVC and zip to proceed.</div>
         <CardElement />
         <Button isLoading={isProcessingPayment} buttonType='inverted'>
           Pay Now
