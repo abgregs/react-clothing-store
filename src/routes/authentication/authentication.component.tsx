@@ -12,7 +12,6 @@ const SignIn = () => {
     if (event.target.value === loginType) {
       return;
     }
-    console.log(value);
     setLoginType(value);
   };
 
@@ -39,7 +38,6 @@ const SignIn = () => {
               onChange={handleLoginType}
               name='loginType'
               value='login'
-              defaultChecked={true}
               checked={loginType === 'login'}
             />
             Sign in
