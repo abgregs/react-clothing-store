@@ -55,26 +55,6 @@ const Navigation = () => {
             </div>
             <div className='hidden sm:block sm:ml-6'>
               <div className='flex space-x-4'>
-                {/* {currentUser ? (
-                  <span
-                    className='nav-link px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-indigo-600'
-                    onClick={signOutUser}
-                  >
-                    Sign Out
-                  </span>
-                ) : (
-                  <NavLink
-                    className={({ isActive }) =>
-                      'nav-link block px-3 py-2 rounded-md text-base font-medium font-inter-bold' +
-                      (isActive
-                        ? ' text-indigo-600'
-                        : ' text-gray-800 hover:text-indigo-600')
-                    }
-                    to='auth'
-                  >
-                    Sign In
-                  </NavLink>
-                )} */}
                 <NavLink
                   className={({ isActive }) =>
                     'nav-link px-3 py-2 rounded-md text-md font-medium font-inter-bold' +
@@ -102,7 +82,7 @@ const Navigation = () => {
           </div>
           {currentUser ? (
                   <span
-                    className='nav-link px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-indigo-600'
+                    className='hidden sm:block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-indigo-600'
                     onClick={signOutUser}
                   >
                     Sign Out
@@ -110,7 +90,7 @@ const Navigation = () => {
                 ) : (
                   <NavLink
                     className={({ isActive }) =>
-                      'nav-link block px-3 py-2 rounded-md text-base font-medium font-inter-bold' +
+                      'hidden sm:block nav-link px-3 py-2 rounded-md text-base font-medium font-inter-bold' +
                       (isActive
                         ? ' text-indigo-600'
                         : ' text-gray-800 hover:text-indigo-600')
