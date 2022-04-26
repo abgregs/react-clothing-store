@@ -55,7 +55,52 @@ const Navigation = () => {
             </div>
             <div className='hidden sm:block sm:ml-6'>
               <div className='flex space-x-4'>
-                {currentUser ? (
+                {/* {currentUser ? (
+                  <span
+                    className='nav-link px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-indigo-600'
+                    onClick={signOutUser}
+                  >
+                    Sign Out
+                  </span>
+                ) : (
+                  <NavLink
+                    className={({ isActive }) =>
+                      'nav-link block px-3 py-2 rounded-md text-base font-medium font-inter-bold' +
+                      (isActive
+                        ? ' text-indigo-600'
+                        : ' text-gray-800 hover:text-indigo-600')
+                    }
+                    to='auth'
+                  >
+                    Sign In
+                  </NavLink>
+                )} */}
+                <NavLink
+                  className={({ isActive }) =>
+                    'nav-link px-3 py-2 rounded-md text-md font-medium font-inter-bold' +
+                    (isActive
+                      ? ' text-indigo-600'
+                      : ' text-gray-800 hover:text-indigo-600')
+                  }
+                  to='shop'
+                >
+                  Shop
+                </NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    'nav-link px-3 py-2 rounded-md text-md font-medium font-inter-bold' +
+                    (isActive
+                      ? ' text-indigo-600'
+                      : ' text-gray-800 hover:text-indigo-600')
+                  }
+                  to='checkout'
+                >
+                  Checkout
+                </NavLink>
+              </div>
+            </div>
+          </div>
+          {currentUser ? (
                   <span
                     className='nav-link px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-indigo-600'
                     onClick={signOutUser}
@@ -75,20 +120,6 @@ const Navigation = () => {
                     Sign In
                   </NavLink>
                 )}
-                <NavLink
-                  className={({ isActive }) =>
-                    'nav-link px-3 py-2 rounded-md text-md font-medium font-inter-bold' +
-                    (isActive
-                      ? ' text-indigo-600'
-                      : ' text-gray-800 hover:text-indigo-600')
-                  }
-                  to='shop'
-                >
-                  Shop
-                </NavLink>
-              </div>
-            </div>
-          </div>
 
           <div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
             <button type='button' className='text-gray-800'>
@@ -139,6 +170,19 @@ const Navigation = () => {
             >
               Shop
             </NavLink>
+            </div>
+            <div className='flex nav-link-container'>
+            <NavLink
+                  className={({ isActive }) =>
+                    'nav-link px-3 py-2 rounded-md text-md font-medium font-inter-bold' +
+                    (isActive
+                      ? ' text-indigo-600'
+                      : ' text-gray-800 hover:text-indigo-600')
+                  }
+                  to='checkout'
+                >
+                  Checkout
+                </NavLink>
             </div>
           </div>
         </nav>
