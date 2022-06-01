@@ -82,7 +82,7 @@ const Navigation = () => {
           </div>
           {currentUser ? (
                   <span
-                    className='hidden sm:block nav-link px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-indigo-600'
+                    className='hidden sm:block nav-link px-3 py-2 rounded-md text-base font-inter-bold cursor-pointer font-medium text-gray-800 hover:text-indigo-600'
                     onClick={signOutUser}
                   >
                     Sign Out
@@ -100,7 +100,6 @@ const Navigation = () => {
                     Sign In
                   </NavLink>
                 )}
-
           <div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
             <button type='button' className='text-gray-800'>
               <span className='sr-only'>View Cart</span>
@@ -117,7 +116,7 @@ const Navigation = () => {
             <div className='flex nav-link-container'>
               {currentUser ? (
                 <span
-                  className='nav-link block px-3 py-2 rounded-md text-base cursor-pointer font-medium text-gray-800 hover:text-indigo-600'
+                  className='nav-link block px-3 py-2 rounded-md text-base font-inter-bold cursor-pointer font-medium text-gray-800 hover:text-indigo-600'
                   onClick={signOutUser}
                 >
                   Sign Out
